@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="TestStaffWeb.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Staff Website</title>
+    <link href="Styles.css" rel="stylesheet" type="text/css" />
+    <style>
+        body {
+            text-align: center;
+            background-color: #B0E0E6;
+        }
+        div {
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .grid-view {
+            margin: 0 auto;
+            width: 80%; 
+        }
+        .grid-view th, .grid-view td {
+            text-align: center; 
+            width: 150px; 
+        }
+        .grid-view .remarks-column {
+            width: 250px;
+        }
+        header {
+            background-color: #003366; /* Luxury blue color */
+            color: white; /* White text */
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        footer {
+            background-color: #003366; /* Luxury blue color */
+            color: white; /* White text */
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .grid-view {
+            margin: 20px auto;
+            width: 100%; /* Use full width */
+            max-width: 800px; /* Limit max width */
+        }
+        .grid-view th, .grid-view td {
+            text-align: center; 
+            padding: 10px; /* Add padding for touch targets */
+        }
+        .grid-view .remarks-column {
+            width: auto; /* Allow column to resize */
+        }
+    </style>
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+    <form id="form1" runat="server" style="flex: 1;">
+        <header style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+            <h2 style="margin: 0;">Staff Website</h2>
+            <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" />
+       <%--      <div class="search-container">
+     <asp:TextBox ID="txtSearch" runat="server" placeholder="Search..." />
+     <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
+ </div>--%>
+        </header>
+        <div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+    </form>
+    <footer style="text-align: center; padding: 10px 0;">
+        <p>© 2024 Company Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
